@@ -5,7 +5,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h2>FLAME</h2>
+      <h2 className='header'>FLAME</h2>
       <FLAME/>
     </div>
   );

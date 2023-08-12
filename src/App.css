@@ -1,5 +1,13 @@
+body {
+  background: #000;
+  place-items: center;
+  min-height: 100vh;
+}
 .App {
   text-align: center;
-  margin: auto;
-  height: 100vh;
+  padding: 10px 10px;
+}
+
+.header{
+  color: white;
 }

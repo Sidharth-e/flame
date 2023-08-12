@@ -32,7 +32,6 @@ function NameEntry() {
   const [name1Error, setName1Error] = useState("");
   const [name2Error, setName2Error] = useState("");
   const [isCalculating, setIsCalculating] = useState(false);
-  const [loading, setLoading] = useState(false); // Add loading state
 
 
   const handleName1Change = (event) => {
@@ -94,10 +93,6 @@ function NameEntry() {
       audioRef.current.play();
     }
     setIsCalculating(false); // Clear loading indicator
-    setLoading(true);
-    setTimeout(() => {
-        setLoading(false);
-      }, 1300);
   };
 
   const getCompatibilityDescription = (result) => {
@@ -162,7 +157,8 @@ function NameEntry() {
 
         <p className="strike">{name1Striked}</p>
         <p className="strike">{name2Striked}</p>
-        <p className="result result-{result}"> {resultMeanings[result]}</p>
+        {result ? 
+        <p className="result result-{result}"> {resultMeanings[result]} between {name1} and {name2}</p>:""}
         <p className={`compatibility-description result-${result}`}>
           {compatibilityDescription}
         </p>
@@ -172,15 +168,15 @@ function NameEntry() {
         {/* <audio ref={audioRefs.M} src={flameAudioM} />
       <audio ref={audioRefs.E} src={flameAudioE} /> */}
       </div>
-      {loading & result==="F"?
-      <div className="celebration"><Lottie style={{height:350}} animationData={flameanimationF} /></div>:""}
-      {loading & result==="L"?
+      {result==="F"?
+      <div ><Lottie style={{height:350}} animationData={flameanimationF} /></div>:""}
+      {result==="L"?
       <div className="celebration"><Lottie style={{height:350}} animationData={flameanimationL} /></div>:""}
-      {loading & result==="A"?
-      <div className="celebration"><Lottie style={{height:350}} animationData={flameanimationA} /></div>:""}
-      {loading & result==="M"?
+      {result==="A"?
+      <div><Lottie style={{height:350}} animationData={flameanimationA} /></div>:""}
+      {result==="M"?
       <div className="celebration"><Lottie style={{height:350}} animationData={flameanimationM} /></div>:""}
-      { loading & result==="E"?
+      {result==="E"?
       <div className="celebration"><Lottie style={{height:350}} animationData={flameanimationE} /></div>:""}
     </>
   );
