@@ -30,9 +30,12 @@
   background: linear-gradient(var(--angle), 
     #032146,  #C3F2FF,#007bff, #b00);
   animation: rotate 10s linear infinite;
+  border-radius: 5px;
 }
 .container::after {
   filter: blur(10px);
+  border-radius: 5px;
+
 }
 @keyframes rotate {
   0%     { --angle: 0deg; }
