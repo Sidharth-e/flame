@@ -52,14 +52,14 @@ function NameEntry() {
 
     const name1StrikedChars = name1Chars.map((char) =>
       uniqueChars1.includes(char) ? (
-        char
+        <span className="nonstrikethrough">{char}</span>
       ) : (
         <span className="strikethrough">{char}</span>
       )
     );
     const name2StrikedChars = name2Chars.map((char) =>
       uniqueChars2.includes(char) ? (
-        char
+        <span className="nonstrikethrough">{char}</span>
       ) : (
         <span className="strikethrough">{char}</span>
       )
@@ -114,16 +114,17 @@ function NameEntry() {
       />
       <span className="error">{name2Error}</span>
       <button onClick={handlePlayFlameGame} disabled={isCalculating} className="button">
-        {isCalculating ?  <span className="calculating">Calculating...</span>: "Play Flame Game"}
+        {isCalculating ?  <span className="calculating">Calculating...</span>: "FLAMES"}
       </button>
       <button className="button" onClick={handleResetGame}>Reset Game</button>
 
-      <p>Name 1: {name1Striked}</p>
-      <p>Name 2: {name2Striked}</p>
-      <p className="result result-{result}">Result: {resultMeanings[result]}</p>
+      <p className="strike">{name1Striked}</p>
+      <p className="strike">{name2Striked}</p>
+      <p className="result result-{result}">{resultMeanings[result]}</p>
       <p className={`compatibility-description result-${result}`}>
         {compatibilityDescription}
       </p>
+      
     </div>
   );
 }
