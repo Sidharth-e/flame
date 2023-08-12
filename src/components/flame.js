@@ -139,7 +139,7 @@ function NameEntry() {
           className="input-field"
           onChange={handleName2Change}
         />
-        <span className="error">{name2Error}</span>
+        <span className="error">{name2Error}</span><br/>
         <button
           onClick={handlePlayFlameGame}
           disabled={isCalculating}
@@ -168,16 +168,18 @@ function NameEntry() {
         {/* <audio ref={audioRefs.M} src={flameAudioM} />
       <audio ref={audioRefs.E} src={flameAudioE} /> */}
       </div>
+      <div>
       {result==="F"?
-      <div ><Lottie style={{height:350}} animationData={flameanimationF} /></div>:""}
+      <div ><Lottie style={{height: 300}} animationData={flameanimationF} /></div>:""}
       {result==="L"?
-      <div className="celebration"><Lottie style={{height:350}} animationData={flameanimationL} /></div>:""}
+      <div className="celebration"><Lottie style={{height: 300}} animationData={flameanimationL} /></div>:""}
       {result==="A"?
-      <div><Lottie style={{height:350}} animationData={flameanimationA} /></div>:""}
+      <div><Lottie style={{height: 300}} animationData={flameanimationA} /></div>:""}
       {result==="M"?
-      <div className="celebration"><Lottie style={{height:350}} animationData={flameanimationM} /></div>:""}
+      <div className="celebration"><Lottie style={{height: 300}} animationData={flameanimationM} /></div>:""}
       {result==="E"?
-      <div className="celebration"><Lottie style={{height:350}} animationData={flameanimationE} /></div>:""}
+      <div className="celebration"><Lottie style={{height: 300}} animationData={flameanimationE} /></div>:""}
+      </div>
     </>
   );
 }
