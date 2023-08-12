@@ -75,15 +75,19 @@
 }
 
 .celebration{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1000; /* Make sure it's on top of other content */
+  position: absolute;
+  top: -300px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+  display: flex;
   color: white;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.animation{
+  width: 100px;
+  height: 100px;
 }
